@@ -1,0 +1,16 @@
+<modification>
+    <name>OCMOD Generator</name>
+	<code>ocmodgenerator</code>
+    <version>1.0</version>
+    <author>Ataul Haque and Ashiful Islam</author>
+	<link>https://github.com/ataul/ocmod_generator</link>	
+	<file path="">
+		<operation error="skip">
+			<search><![CDATA[]]></search>
+			<add position="before"><![CDATA[
+	
+			]]>
+			</add>
+		</operation>
+	</file>	
+</modification>
