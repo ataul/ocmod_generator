@@ -12,5 +12,10 @@ Details can be found at:
 //ocmod [extension_name] after
 
 2. In twig file comment can be
-&gt;!-- ocmod [extension_name] replace
+
+&lt;!-- ocmod [extension_name] replace --&gt;
+
+&lt;!-- ocmod [extension_name] before --&gt;
+
+&lt;!-- ocmod [extension_name] after --&gt;
 
