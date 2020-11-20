@@ -4,13 +4,34 @@
     <version>1.0</version>
     <author>Ataul Haque and Ashiful Islam</author>
 	<link>https://github.com/ataul/ocmod_generator</link>	
-	<file path="">
-		<operation error="skip">
-			<search><![CDATA[]]></search>
-			<add position="before"><![CDATA[
-	
-			]]>
-			</add>
-		</operation>
-	</file>	
+	<file path="admin/controller/marketplace/modification.php">
+        <operation error="skip">
+            <search><![CDATA[ getList() {]]></search>
+            <add position="after"><![CDATA[
+		  $data['generator'] = $this->url->link('extension/module/ocmod_generator/generate', 'user_token=' . $this->session->data['user_token'], true);
+		  ]]>
+            </add>
+        </operation>
+    </file>
+    <file path="admin/language/en-gb/marketplace/modification.php">
+        <operation error="skip">
+            <search><![CDATA[<?php]]></search>
+            <add position="after"><![CDATA[
+		  $_['button_generator'] = 'Generate';
+		  ]]>
+            </add>
+        </operation>
+    </file>
+    <file path="admin/view/template/marketplace/modification.twig">
+        <operation error="skip">
+            <search>
+                <![CDATA[<button type="button" data-toggle="tooltip" title="{{ button_delete }}" class="btn btn-danger" onclick="confirm('{{ text_confirm }}') ? $('#form-modification').submit() : false;"><i class="fa fa-trash-o"></i></button>]]></search>
+            <add position="after"><![CDATA[
+		  
+		  <a href="{{ generator }}" data-toggle="tooltip" title="{{button_generator}}" class="btn btn-default"><i class="fa fa-exclamation-triangle"></i></a>
+		  
+		  ]]>
+            </add>
+        </operation>
+    </file>	
 </modification>
